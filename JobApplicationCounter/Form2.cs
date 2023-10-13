@@ -46,11 +46,11 @@ namespace JobApplicationCounter
             // Parse the lines and add data to the DataTable
             foreach (string line in lines)
             {
-                string[] parts = line.Split('-'); // Split the line into parts
-                if (parts.Length >= 2)
+                string[] parts = line.Split("/"); // Split the line into parts
+                if (parts.Length >= 4)
                 {
                     // Add a new row with the CompanyName and JobTitle
-                    recordsDataGridView.Rows.Add(parts[0].Trim(), parts[1].Trim());
+                    recordsDataGridView.Rows.Add(parts[0].Trim(), parts[1].Trim(), parts[2].Trim(), parts[3].Trim());
                 }
             }
         }
@@ -125,5 +125,7 @@ namespace JobApplicationCounter
                 }
             }
         }
+
+      
     }
 }

@@ -90,11 +90,13 @@ namespace JobApplicationCounter
                 {
                     string companyName = dialog.NewCompanyName;
                     string jobTitle = dialog.JobTitle;
+                    string jobLocation = dialog.JobLocation;
+                    string applicationDate = dialog.ApplicationDate;
 
                     // Append the company name and job title to the file
                     using (StreamWriter writer = File.AppendText(appliedCompanyNamesFilePath))
                     {
-                        writer.WriteLine($"{companyName} - {jobTitle}");
+                        writer.WriteLine($"{companyName} / {jobTitle} / {jobLocation} / {applicationDate}");
                     }
 
                     // Update the count
@@ -105,7 +107,7 @@ namespace JobApplicationCounter
                     // Log the action
                     using (StreamWriter writer = File.AppendText(logFilePath))
                     {
-                        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}: Added a record [{companyName} - {jobTitle}]");
+                        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}: Added a record [{companyName} / {jobTitle} / {jobLocation}]");
                     }
                 }
             }

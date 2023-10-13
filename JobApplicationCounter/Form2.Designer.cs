@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             recordsDataGridView = new DataGridView();
+            companyName = new DataGridViewTextBoxColumn();
+            jobTitle = new DataGridViewTextBoxColumn();
+            location = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
             okButton = new Button();
             exportButton = new Button();
             titleLabel = new Label();
-            companyName = new DataGridViewTextBoxColumn();
-            jobTitle = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)recordsDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -41,21 +43,54 @@
             // 
             recordsDataGridView.AllowUserToAddRows = false;
             recordsDataGridView.AllowUserToDeleteRows = false;
+            recordsDataGridView.AllowUserToOrderColumns = true;
             recordsDataGridView.AllowUserToResizeRows = false;
             recordsDataGridView.BackgroundColor = SystemColors.Window;
             recordsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recordsDataGridView.Columns.AddRange(new DataGridViewColumn[] { companyName, jobTitle });
+            recordsDataGridView.Columns.AddRange(new DataGridViewColumn[] { companyName, jobTitle, location, Date });
             recordsDataGridView.Location = new Point(25, 75);
             recordsDataGridView.Name = "recordsDataGridView";
             recordsDataGridView.ReadOnly = true;
             recordsDataGridView.RowHeadersWidth = 200;
             recordsDataGridView.RowTemplate.Height = 33;
-            recordsDataGridView.Size = new Size(530, 305);
+            recordsDataGridView.Size = new Size(752, 381);
             recordsDataGridView.TabIndex = 0;
+            // 
+            // companyName
+            // 
+            companyName.HeaderText = "Company Name";
+            companyName.MinimumWidth = 8;
+            companyName.Name = "companyName";
+            companyName.ReadOnly = true;
+            companyName.Width = 250;
+            // 
+            // jobTitle
+            // 
+            jobTitle.HeaderText = "Job Title";
+            jobTitle.MinimumWidth = 8;
+            jobTitle.Name = "jobTitle";
+            jobTitle.ReadOnly = true;
+            jobTitle.Width = 150;
+            // 
+            // location
+            // 
+            location.HeaderText = "Location";
+            location.MinimumWidth = 8;
+            location.Name = "location";
+            location.ReadOnly = true;
+            location.Width = 150;
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 8;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 150;
             // 
             // okButton
             // 
-            okButton.Location = new Point(325, 398);
+            okButton.Location = new Point(547, 492);
             okButton.Name = "okButton";
             okButton.Size = new Size(112, 34);
             okButton.TabIndex = 5;
@@ -65,7 +100,7 @@
             // 
             // exportButton
             // 
-            exportButton.Location = new Point(443, 398);
+            exportButton.Location = new Point(665, 492);
             exportButton.Name = "exportButton";
             exportButton.Size = new Size(112, 34);
             exportButton.TabIndex = 4;
@@ -84,27 +119,11 @@
             titleLabel.Text = "All Applied Jobs";
             titleLabel.Click += label1_Click;
             // 
-            // companyName
-            // 
-            companyName.HeaderText = "Company Name";
-            companyName.MinimumWidth = 8;
-            companyName.Name = "companyName";
-            companyName.ReadOnly = true;
-            companyName.Width = 250;
-            // 
-            // jobTitle
-            // 
-            jobTitle.HeaderText = "Job Title";
-            jobTitle.MinimumWidth = 8;
-            jobTitle.Name = "jobTitle";
-            jobTitle.ReadOnly = true;
-            jobTitle.Width = 150;
-            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(578, 444);
+            ClientSize = new Size(802, 538);
             Controls.Add(titleLabel);
             Controls.Add(okButton);
             Controls.Add(exportButton);
@@ -125,5 +144,7 @@
         private Label titleLabel;
         private DataGridViewTextBoxColumn companyName;
         private DataGridViewTextBoxColumn jobTitle;
+        private DataGridViewTextBoxColumn location;
+        private DataGridViewTextBoxColumn Date;
     }
 }
